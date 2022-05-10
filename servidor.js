@@ -1,8 +1,12 @@
 const http = required('http');
+const port = 3000;  
 
 const server = http.createserver((req, res) => {
-    res.end('Hola mundo esto es una prueba de su docente')
-})
+    res.statuscode = 200;
+    res.setHeader('Content-Type','text/plain');
+    res.end('Hola a todos les dice su docente');
+});
 
-server.listen(3000);
-console.log('Servidor en el puerto 3000')
+server.listen(port,() => {
+    console.log('Server corriendo en el puerto: ${port}');
+});
